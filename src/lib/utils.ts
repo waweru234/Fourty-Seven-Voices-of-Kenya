@@ -1,17 +1,14 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
+// Utility function to merge Tailwind CSS class names
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
+// Function to generate a membership number with prefix "VOK" and a 6-digit random number
 export const generateMembershipNumber = (): string => {
   const prefix = 'VOK';
   const randomNum = Math.floor(100000 + Math.random() * 900000);
   return `${prefix}-${randomNum}`;
 };
-=======
->>>>>>> b06fccbbc363e39cfd222c47d6a0fca4541e43ba
->>>>>>> 24d3fc179a2adb89f949ed1da0a0f4fc3d30d8cc
