@@ -29,6 +29,7 @@ const Navbar = () => {
   }, [])
 
   const scrollToSection = (sectionId: string) => {
+    // If we're on the home page, scroll to the section
     if (location.pathname === "/") {
       const section = document.getElementById(sectionId)
       if (section) {
@@ -36,6 +37,7 @@ const Navbar = () => {
         setMobileMenuOpen(false)
       }
     } else {
+      // If we're on another page, navigate to home and then scroll
       navigate(`/#${sectionId}`)
     }
   }
@@ -45,16 +47,6 @@ const Navbar = () => {
     navigate("/")
   }
 
-  const navItems = [
-    { id: "top", label: "Home", color: "hotpink" },
-    { id: "slogan", label: "Slogan", color: "green" },
-    { id: "vision", label: "About", color: "lightblue" },
-    { id: "message", label: "Manifesto", color: "gold" },
-    { id: "leadership", label: "Leadership", color: "brown" },
-    { id: "gallery", label: "Gallery", color: "hotpink" },
-    { id: "contact", label: "Contact", color: "lightblue" }
-  ]
-
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -63,31 +55,70 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="h-12 w-12 rounded-full overflow-hidden">
-              <img
-                src="/lovable-uploads/vok.png"
-                alt="Forty Seven Voices of Kenya"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="text-party-hotpink text-2xl font-bold tracking-wider">
-              THE VOICE PARTY
+          <div className="flex items-center">
+            <div className="flex items-center gap-3">
+              <div className="h-12 w-12 rounded-full overflow-hidden">
+                <img
+                  src="/lovable-uploads/vok.png"
+                  alt="Forty Seven Voices of Kenya"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="text-party-hotpink text-2xl font-bold tracking-wider">THE VOICE PARTY</div>
             </div>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-1">
-            {navItems.map((item) => (
-              <Button
-                key={item.id}
-                variant="ghost"
-                className={`text-gray-800 font-medium hover:bg-party-${item.color}/10 hover:text-party-${item.color}`}
-                onClick={() => scrollToSection(item.id)}
-              >
-                {item.label}
-              </Button>
-            ))}
+            <Button
+              variant="ghost"
+              className="text-gray-800 font-medium hover:bg-party-hotpink/10 hover:text-party-hotpink"
+              onClick={() => scrollToSection("top")}
+            >
+              Home
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-gray-800 font-medium hover:bg-party-green/10 hover:text-party-green"
+              onClick={() => scrollToSection("slogan")}
+            >
+              Slogan
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-gray-800 font-medium hover:bg-party-lightblue/10 hover:text-party-lightblue"
+              onClick={() => scrollToSection("vision")}
+            >
+              About
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-gray-800 font-medium hover:bg-party-gold/10 hover:text-party-gold"
+              onClick={() => scrollToSection("message")}
+            >
+              Manifesto
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-gray-800 font-medium hover:bg-party-brown/10 hover:text-party-brown"
+              onClick={() => scrollToSection("leadership")}
+            >
+              Leadership
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-gray-800 font-medium hover:bg-party-hotpink/10 hover:text-party-hotpink"
+              onClick={() => scrollToSection("gallery")}
+            >
+              Gallery
+            </Button>
+            <Button
+              variant="ghost"
+              className="text-gray-800 font-medium hover:bg-party-lightblue/10 hover:text-party-lightblue"
+              onClick={() => scrollToSection("contact")}
+            >
+              Contact
+            </Button>
 
             {isAuthenticated ? (
               <>
@@ -143,16 +174,55 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className="mt-4 md:hidden bg-white rounded-lg shadow-xl border border-gray-100 animate-fade-in">
             <div className="flex flex-col p-4 space-y-2">
-              {navItems.map((item) => (
-                <Button
-                  key={item.id}
-                  variant="ghost"
-                  className="text-gray-800 font-medium w-full text-left justify-start hover:bg-party-gold/10 hover:text-party-gold"
-                  onClick={() => scrollToSection(item.id)}
-                >
-                  {item.label}
-                </Button>
-              ))}
+              <Button
+                variant="ghost"
+                className="text-gray-800 font-medium w-full text-left justify-start hover:bg-party-gold/10 hover:text-party-gold"
+                onClick={() => scrollToSection("top")}
+              >
+                Home
+              </Button>
+              <Button
+                variant="ghost"
+                className="text-gray-800 font-medium w-full text-left justify-start hover:bg-party-gold/10 hover:text-party-gold"
+                onClick={() => scrollToSection("slogan")}
+              >
+                Slogan
+              </Button>
+              <Button
+                variant="ghost"
+                className="text-gray-800 font-medium w-full text-left justify-start hover:bg-party-gold/10 hover:text-party-gold"
+                onClick={() => scrollToSection("vision")}
+              >
+                About
+              </Button>
+              <Button
+                variant="ghost"
+                className="text-gray-800 font-medium w-full text-left justify-start hover:bg-party-gold/10 hover:text-party-gold"
+                onClick={() => scrollToSection("message")}
+              >
+                Manifesto
+              </Button>
+              <Button
+                variant="ghost"
+                className="text-gray-800 font-medium w-full text-left justify-start hover:bg-party-gold/10 hover:text-party-gold"
+                onClick={() => scrollToSection("leadership")}
+              >
+                Leadership
+              </Button>
+              <Button
+                variant="ghost"
+                className="text-gray-800 font-medium w-full text-left justify-start hover:bg-party-gold/10 hover:text-party-gold"
+                onClick={() => scrollToSection("gallery")}
+              >
+                Gallery
+              </Button>
+              <Button
+                variant="ghost"
+                className="text-gray-800 font-medium w-full text-left justify-start hover:bg-party-gold/10 hover:text-party-gold"
+                onClick={() => scrollToSection("contact")}
+              >
+                Contact
+              </Button>
 
               {isAuthenticated ? (
                 <>

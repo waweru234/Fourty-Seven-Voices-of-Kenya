@@ -1,5 +1,7 @@
 "use client"
 
+import type React from "react"
+
 import { motion } from "framer-motion"
 import { Download, Lock } from "lucide-react"
 import { useAuth } from "@/contexts/AuthContext"
@@ -32,9 +34,7 @@ const Message = () => {
             Party <span className="text-party-green">Manifesto</span>
           </h2>
           <div className="w-24 h-1 bg-party-green mx-auto my-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our commitment and promise to the people of Kenya
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Our commitment and promise to the people of Kenya</p>
         </div>
 
         <motion.div
@@ -53,6 +53,7 @@ const Message = () => {
                 <Download size={18} />
                 Download Manifesto
               </a>
+
               <a
                 href="/documents/VOICES PARTY CONSTITUTION.pdf"
                 download
@@ -61,16 +62,18 @@ const Message = () => {
                 <Download size={18} />
                 Party Constitution
               </a>
+
               <a
-                href="/documents/Election & Nomination Rules of The Voices Party final amended cover.pdf"
+                href="/documents/Election & Nomination Rules of The Voices  Party final amended cover.pdf"
                 download
                 className="bg-party-gold hover:bg-yellow-700 text-white px-6 py-3 rounded-md flex items-center gap-2 transition-colors shadow-md hover:shadow-lg"
               >
                 <Download size={18} />
                 Election Rules
               </a>
+
               <a
-                href="/documents/Statement of Ideology of 47 voices.pdf"
+                href="/documents/Statement of Ideology  of 47 voices.pdf"
                 download
                 className="bg-party-lightblue hover:bg-blue-700 text-white px-6 py-3 rounded-md flex items-center gap-2 transition-colors shadow-md hover:shadow-lg"
               >
@@ -88,6 +91,7 @@ const Message = () => {
                 <Lock size={18} />
                 Download Manifesto
               </a>
+
               <a
                 href="#"
                 onClick={(e) => handleDownloadClick(e, "Constitution")}
@@ -96,6 +100,7 @@ const Message = () => {
                 <Lock size={18} />
                 Party Constitution
               </a>
+
               <a
                 href="#"
                 onClick={(e) => handleDownloadClick(e, "Election Rules")}
@@ -104,6 +109,7 @@ const Message = () => {
                 <Lock size={18} />
                 Election Rules
               </a>
+
               <a
                 href="#"
                 onClick={(e) => handleDownloadClick(e, "Ideology")}
@@ -150,11 +156,15 @@ const Message = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+            {/* Decorative top accent */}
             <div className="h-2 bg-gradient-to-r from-party-hotpink via-party-gold to-party-green w-full"></div>
+
+            {/* Background pattern */}
             <div className="absolute inset-0 z-0">
               <div className="absolute top-0 right-0 h-40 w-40 bg-party-hotpink/5 rounded-full -mr-20 -mt-20"></div>
               <div className="absolute bottom-0 left-0 h-40 w-40 bg-party-green/5 rounded-full -ml-20 -mb-20"></div>
             </div>
+
             <div className="p-6 md:p-8 relative z-10">
               <div className="flex items-center justify-center mb-6 flex-col">
                 <div className="h-24 w-24 rounded-full overflow-hidden border-4 border-party-gold shadow-lg mb-4 relative group">
@@ -167,6 +177,7 @@ const Message = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-party-gold">Message from the Party Leader</h3>
               </div>
+
               <div className="prose prose-lg max-w-none text-gray-600 bg-gray-50/70 rounded-lg p-6 border border-gray-100">
                 <p className="leading-relaxed">
                   Fellow Kenyans, I address you today with a vision for a united, prosperous, and equitable Kenya. Our
@@ -238,11 +249,15 @@ const Message = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
+            {/* Decorative top accent */}
             <div className="h-2 bg-gradient-to-r from-party-gold via-party-green to-party-lightblue w-full"></div>
+
+            {/* Background pattern */}
             <div className="absolute inset-0 z-0">
               <div className="absolute top-0 right-0 h-40 w-40 bg-party-gold/5 rounded-full -mr-20 -mt-20"></div>
               <div className="absolute bottom-0 left-0 h-40 w-40 bg-party-lightblue/5 rounded-full -ml-20 -mb-20"></div>
             </div>
+
             <div className="p-6 md:p-8 relative z-10">
               <div className="flex items-center justify-center mb-6 flex-col">
                 <div className="h-24 w-24 rounded-full overflow-hidden border-4 border-party-green shadow-lg mb-4 relative group">
@@ -255,6 +270,7 @@ const Message = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-party-green">Message from the National Chairperson</h3>
               </div>
+
               <div className="prose prose-lg max-w-none text-gray-600 bg-gray-50/70 rounded-lg p-6 border border-gray-100">
                 <p className="leading-relaxed">
                   Fellow Kenyans, I address you today with a vision for a united, prosperous, and equitable Kenya. Our
@@ -326,11 +342,15 @@ const Message = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
+            {/* Decorative top accent */}
             <div className="h-2 bg-gradient-to-r from-party-lightblue via-party-hotpink to-party-gold w-full"></div>
+
+            {/* Background pattern */}
             <div className="absolute inset-0 z-0">
               <div className="absolute top-0 right-0 h-40 w-40 bg-party-lightblue/5 rounded-full -mr-20 -mt-20"></div>
               <div className="absolute bottom-0 left-0 h-40 w-40 bg-party-hotpink/5 rounded-full -ml-20 -mb-20"></div>
             </div>
+
             <div className="p-6 md:p-8 relative z-10">
               <div className="flex items-center justify-center mb-6 flex-col">
                 <div className="h-24 w-24 rounded-full overflow-hidden border-4 border-party-lightblue shadow-lg mb-4 relative group">
@@ -343,6 +363,7 @@ const Message = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-party-lightblue">Message from the Deputy Party Leader</h3>
               </div>
+
               <div className="prose prose-lg max-w-none text-gray-600 bg-gray-50/70 rounded-lg p-6 border border-gray-100">
                 <p className="leading-relaxed">
                   Fellow Kenyans, I address you today with a vision for a united, prosperous, and equitable Kenya. Our
