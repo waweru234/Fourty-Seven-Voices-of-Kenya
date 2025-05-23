@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "next build && cp .next/routes-manifest.json .next/routes-manifest.json.bak",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
