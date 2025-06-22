@@ -1,0 +1,52 @@
+# Enable rewrite engine
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+# Set correct MIME types
+AddType text/css .css
+AddType application/javascript .js
+AddType text/javascript .js
+AddType application/x-javascript .js
+AddType image/svg+xml .svg
+AddType application/json .json
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType image/png .png
+AddType image/jpeg .jpg .jpeg
+AddType image/gif .gif
+
+# Set default character set
+AddDefaultCharset utf-8
+
+# Enable CORS
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+
+# Handle static files in assets directory
+RewriteCond %{REQUEST_URI} \.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|json)$ [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Handle SPA routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# Set security headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"
+
+# Enable caching for static assets
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2)$">
+    Header set Cache-Control "public, max-age=31536000"
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes 

@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Hero = () => {
+  const navigate = useNavigate()
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const backgroundImages = [
     "/lovable-uploads/129fc8a3-d480-4909-bf31-28fc98b2c0eb.png",
@@ -24,7 +26,7 @@ const Hero = () => {
   }, [backgroundImages.length])
 
   return (
-    <div id="top" className="bg-white py-20 lg:py-32 relative overflow-hidden">
+    <div id="top" className="bg-black py-20 lg:py-35 relative overflow-hidden">
       {/* Background image carousel with horizontal scroll */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="relative w-full h-full">
@@ -70,14 +72,14 @@ const Hero = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
             >
               <span className="text-party-gold drop-shadow-sm">FORTY SEVEN</span>{" "}
-              <span className="text-gray-800">VOICES OF KENYA</span>
+              <span className="text-gray-900">VOICES OF KENYA</span>
             </motion.h1>
             <div className="w-32 h-1.5 bg-party-green mx-auto lg:mx-0 my-6"></div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 text-lg md:text-xl text-gray-700 max-w-xl"
+              className="mt-6 text-lg md:text-xl text-party-lightblue max-w-xl"
             >
               A national political party that stands for progress, good governance, and a united, prosperous Kenya built
               on the foundation of equal representation.
@@ -92,12 +94,7 @@ const Hero = () => {
             >
               <Button
                 className="bg-party-hotpink hover:bg-opacity-90 text-white px-8 py-6 text-lg rounded-md shadow-lg flex items-center transition-transform hover:scale-105"
-                onClick={() => {
-                  const section = document.getElementById("join")
-                  if (section) {
-                    section.scrollIntoView({ behavior: "smooth" })
-                  }
-                }}
+                onClick={() => navigate("/membership")}
               >
                 Join The Movement
                 <ArrowRight className="ml-2" />
@@ -105,12 +102,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 className="border-2 border-party-green text-party-green hover:bg-party-green hover:text-white px-8 py-6 text-lg rounded-md shadow-lg transition-transform hover:scale-105"
-                onClick={() => {
-                  const section = document.getElementById("leadership")
-                  if (section) {
-                    section.scrollIntoView({ behavior: "smooth" })
-                  }
-                }}
+                onClick={() => navigate("/leadership")}
               >
                 Our Leadership
               </Button>

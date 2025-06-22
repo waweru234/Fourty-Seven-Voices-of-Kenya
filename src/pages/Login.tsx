@@ -7,7 +7,7 @@ import { useAuth } from "@/contexts/AuthContext"
 import { useNavigate } from "react-router-dom"
 
 const Login = () => {
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated,user } = useAuth()
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -23,21 +23,7 @@ const Login = () => {
       <div className="pt-24 pb-16 px-4">
         <div className="max-w-md mx-auto">
           <LoginForm />
-          <div className="text-center mt-6">
-            <p className="text-gray-600">
-              Don't have an account?{" "}
-              <a
-                href="#join"
-                onClick={(e) => {
-                  e.preventDefault()
-                  navigate("/#join")
-                }}
-                className="text-party-hotpink hover:underline"
-              >
-                Register now
-              </a>
-            </p>
-          </div>
+   
         </div>
       </div>
     </div>

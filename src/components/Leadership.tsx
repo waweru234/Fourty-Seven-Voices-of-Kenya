@@ -16,15 +16,21 @@ const leadershipTeam: LeaderProps[] = [
     image: "/lovable-uploads/0266e8af-6d34-4c02-8bc3-b5203bc131d5.png",
   },
 
+
+  {
+    name: "Silvanus Mbugua Gitau. Son of Africa ",
+    role: "D. Secretary General & Head of ICT Department",
+    image: "/lovable-uploads/silva (1).jpeg",
+  },
   {
     name: "Jibril Manyasa",
-    role: "Secretary General",
+    role: "Head of Operations",
     image: "/lovable-uploads/bf3e08b0-1631-4d2d-8b64-849276bbee0c.png",
   },
-     {
-    name: "Silvanus Mbugua Gitau. Son of Africa ",
-    role: "National Director of Operations & Head of ICT Department",
-    image: "/lovable-uploads/silva (1).jpeg",
+  {
+    name: "Martha Njeri Mbugua",
+    role: "Deputy Treasurer (Nairobi County)",
+    image: "/lovable-uploads/WhatsApp Image 2025-05-25 at 13.12.44.jpeg",
   },
   {
     name: "Aaron Kibet",
@@ -37,7 +43,7 @@ const leadershipTeam: LeaderProps[] = [
     image: "/lovable-uploads/d9703b7c-155e-4ecd-9fd5-6e6d13768c60.png",
   },
        {
-    name: "Tony Jillo Nkaduda",
+    name: "Tonny Jillo Nkaduda",
     role: "Youth Nest chairperson",
     image: "/lovable-uploads/silva (2).jpeg",
   },
@@ -56,6 +62,15 @@ const leadershipTeam: LeaderProps[] = [
     role: "National Council of Elders (Wisdom Chamber Chairperson)",
     image: "/lovable-uploads/b1cbe2a4-28ab-4a77-91f6-c8fcf29ecdb2.png",
   },
+   {
+    name: "Grace Nyambura Kimani",
+    role: "Head of party Disciplinary Committee",
+    image: "/lovable-uploads/WhatsApp Image 2025-05-24 at 00.21.19.jpeg",
+  }, {
+    name: "Jackline Mayaka",
+    role: "Women Nest Chairperson",
+    image: "/lovable-uploads/WhatsApp Image 2025-05-24 at 00.00.37.jpeg",
+  },  
 ]
 
 const teamImages = [
@@ -69,9 +84,9 @@ const teamImages = [
   {
     src: "/lovable-uploads/party2.jpeg",
     alt: "Larger group of party members in various colored shirts",
-    title: "County Representatives",
+    title: "Party Founders",
     description:
-      "Our diverse team of county representatives from across Kenya, showcasing the party's commitment to national unity and representation from all 47 counties. Together, we stand for inclusive governance.",
+      "Our founding members who laid the groundwork for Forty Seven Voices of Kenya Party. Their vision and dedication have been instrumental in shaping our party's mission and values.",
   },
   {
     src: "/lovable-uploads/party3.jpeg",
@@ -83,9 +98,9 @@ const teamImages = [
   {
     src: "/lovable-uploads/party4.jpeg",
     alt: "Party leadership team in formal attire",
-    title: "Strategic Advisory Team",
+    title: "Party Security Team",
     description:
-      "Our Strategic Advisory Team brings together professionals from diverse backgrounds to provide expert guidance on policy development, community engagement, and organizational growth.",
+      "Our dedicated security team ensuring the safety and integrity of our party events and activities. Their commitment to maintaining a secure environment allows us to focus on our mission.",
   },
 ]
 

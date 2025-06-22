@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+}
+
+/* Accessibility Styles */
+@layer base {
+  /* Skip to main content link */
+  .skip-to-main {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:shadow-lg focus:rounded;
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-offset-2 ring-party-gold;
+  }
+
+  /* Reduced motion */
+  .reduce-motion * {
+    @apply !transition-none !animate-none;
+  }
+
+  /* Accessibility modes */
+  [data-accessibility-mode="epilepsy"] {
+    /* Reduce visual triggers */
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [data-accessibility-mode="epilepsy"] * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [data-accessibility-mode="epilepsy"] img,
+  [data-accessibility-mode="epilepsy"] video {
+    filter: saturate(50%) brightness(95%) contrast(75%) !important;
+  }
+
+  [data-accessibility-mode="visual"] {
+    /* Enhanced visibility */
+    font-size: 120% !important;
+    line-height: 1.6 !important;
+  }
+
+  [data-accessibility-mode="visual"] p,
+  [data-accessibility-mode="visual"] span,
+  [data-accessibility-mode="visual"] button,
+  [data-accessibility-mode="visual"] a {
+    font-weight: 600 !important;
+    letter-spacing: 0.025em !important;
+  }
+
+  [data-accessibility-mode="visual"] button,
+  [data-accessibility-mode="visual"] a {
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+    padding: 0.5rem !important;
+    background-color: #f3f4f6 !important;
+    border: 2px solid #d1d5db !important;
+  }
+
+  [data-accessibility-mode="cognitive"] {
+    /* Simplified layout */
+    line-height: 1.8 !important;
+  }
+
+  [data-accessibility-mode="cognitive"] p {
+    max-width: 60ch !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 1.125rem !important;
+  }
+
+  [data-accessibility-mode="cognitive"] button,
+  [data-accessibility-mode="cognitive"] a {
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    padding: 0.5rem !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  [data-accessibility-mode="adhd"] {
+    /* Focus-friendly */
+    background-color: #f9fafb !important;
+  }
+
+  [data-accessibility-mode="adhd"] main > * {
+    opacity: 0.7 !important;
+    transition: opacity 0.2s ease-in-out !important;
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+    border-radius: 0.5rem !important;
+  }
+
+  [data-accessibility-mode="adhd"] main > *:hover,
+  [data-accessibility-mode="adhd"] main > *:focus-within {
+    opacity: 1 !important;
+    background-color: white !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  [data-accessibility-mode="blind"] {
+    /* High contrast and clear focus */
+    background-color: white !important;
+    color: black !important;
+  }
+
+  [data-accessibility-mode="blind"] * {
+    color: black !important;
+    background-color: white !important;
+    border-color: black !important;
+  }
+
+  [data-accessibility-mode="blind"] a,
+  [data-accessibility-mode="blind"] button {
+    border: 4px solid black !important;
+    padding: 0.5rem !important;
+    margin: 0.25rem !important;
+    font-weight: bold !important;
+    text-decoration: underline !important;
+  }
+
+  [data-accessibility-mode="blind"] img {
+    border: 4px solid black !important;
+    padding: 2px !important;
+  }
+
+  [data-accessibility-mode="blind"] input,
+  [data-accessibility-mode="blind"] select,
+  [data-accessibility-mode="blind"] textarea {
+    border: 4px solid black !important;
+    background-color: white !important;
+    color: black !important;
+    padding: 0.5rem !important;
+  }
+
+  /* Focus styles for all modes */
+  *:focus-visible {
+    outline: 3px solid #fbbf24 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+  }
+  
+  * {
+    @apply !border-2 !border-current;
+  }
+  
+  img, video {
+    @apply !contrast-125 !brightness-90;
+  }
+} 
